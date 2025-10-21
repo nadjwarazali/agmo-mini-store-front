@@ -17,8 +17,8 @@ export default function Cart() {
         </div>
       ) : null}
       {cart.map((item) => (
-        <div>
-          <div key={item.id} className="flex items-center gap-3 mb-3">
+        <div key={item.id}>
+          <div className="flex items-center gap-3 mb-3">
             <img
               src={item.image}
               alt={item.title}

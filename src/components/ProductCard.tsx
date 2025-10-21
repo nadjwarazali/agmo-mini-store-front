@@ -16,7 +16,7 @@ export default function ProductCard({ product, onAdd }: Props) {
             loading="lazy"
           />
         )}
-        <div className="flex flex-col flex-grow justify-between p-5">
+        <div className="flex flex-col flex-grow justify-between p-3 lg:p-5">
           <div>
             <p className="font-bold text-md tracking-tight mb-2 text-base/6">
               {product.title}

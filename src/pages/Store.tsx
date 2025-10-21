@@ -59,48 +59,50 @@ export default function Store() {
 
   return (
     <section>
-      <header className="flex items-center justify-between my-12">
-        <h1 className="text-4xl">Agmo Store</h1>
-        <div className="flex flex-row gap-3 items-center">
+      <header className="flex flex-col lg:flex-row w-[100%] items-center gap-5 justify-between my-12">
+        <h1 className="text-3xl lg:text-4xl">Agmo Store</h1>
+        <div className="flex flex-col lg:flex-row gap-3 lg:gap-5 items-center justify-end">
           <input
             type="search"
-            className="p-5 h-10 w-full border rounded-full"
+            className="p-5 h-10 w-[100%] lg:w-50  border rounded-full"
             placeholder="Search products..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
-          <select
-            className="border h-10 px-4 rounded-full"
-            onChange={(e) => setSelectedCategory(e.target.value)}
-          >
-            <option value="all" className="option-button">
-              All Categories
-            </option>
-            {Array.from(new Set(products.map((p) => p.category))).map(
-              (category) => (
-                <option
-                  className="option-button"
-                  key={category}
-                  value={category}
-                >
-                  {capitalize(category!)}
-                </option>
-              )
-            )}
-          </select>
-          <div className="relative">
-            <span className="absolute left-3 top-1/2 -translate-y-[0.7em]">
-              RM
-            </span>
-            <input
-              type="number"
-              placeholder="Max Price"
-              className="border rounded-full h-10 pl-10 pr-3 w-50    
+          <div className="flex flex-row items-center gap-3">
+            <select
+              className="border w-full max-w-50 h-10 px-4 rounded-full"
+              onChange={(e) => setSelectedCategory(e.target.value)}
+            >
+              <option value="all" className="option-button">
+                All Categories
+              </option>
+              {Array.from(new Set(products.map((p) => p.category))).map(
+                (category) => (
+                  <option
+                    className="option-button"
+                    key={category}
+                    value={category}
+                  >
+                    {capitalize(category!)}
+                  </option>
+                )
+              )}
+            </select>
+            <div className="relative">
+              <span className="absolute left-3 top-1/2 -translate-y-[0.7em]">
+                RM
+              </span>
+              <input
+                type="number"
+                placeholder="Max Price"
+                className="border rounded-full h-10 pl-10 pr-3 w-[100%] lg:w-50    
               [appearance:textfield] 
               [&::-webkit-outer-spin-button]:appearance-none 
               [&::-webkit-inner-spin-button]:appearance-none"
-              onChange={(e) => setMaxPrice(Number(e.target.value))}
-            />
+                onChange={(e) => setMaxPrice(Number(e.target.value))}
+              />
+            </div>
           </div>
         </div>
       </header>

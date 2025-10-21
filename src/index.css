@@ -59,7 +59,7 @@
 
 @layer components {
   .row {
-    @apply flex flex-row items-center justify-between;
+    @apply flex flex-col lg:flex-row items-center justify-between;
   }
 
   .product-card {
@@ -72,7 +72,7 @@
   }
 
   .grid-products {
-    @apply grid gap-7 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4;
+    @apply grid gap-5 lg:gap-7 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4;
   }
 
   .outline-button {
@@ -87,7 +87,7 @@
   }
 
   .option-button {
-    @apply px-4 py-1 rounded-full cursor-pointer;
+    @apply cursor-pointer;
     background-color: var(--color-primary);
   }
 }

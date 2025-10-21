@@ -57,13 +57,15 @@ export default function ProductDetails() {
           />
         )}
         <div>
-          <h1 className="text-4xl font-bold mb-4">{product.title}</h1>
+          <h1 className="text-xl lg:text-4xl font-bold mb-4">
+            {product.title}
+          </h1>
           <p className="text-2xl font-semibold mb-2">
             RM{product.price.toFixed(2)}
           </p>
           <p>{product.description}</p>
           <button
-            className="outline-button mt-10"
+            className="outline-button my-10"
             onClick={() => {
               handleAdd(product);
             }}
