@@ -28,7 +28,7 @@ export default function Cart() {
             <div className="flex-1">
               <p>{item.title}</p>
               <p>
-                ${item.price} x {item.quantity}
+                RM{item.price} x {item.quantity}
               </p>
             </div>
             <button

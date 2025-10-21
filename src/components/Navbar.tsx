@@ -30,7 +30,7 @@ const Navbar = () => {
         >
           🛒 Cart
           {cart.length > 0 && (
-            <span className="bg-[var(--color-secondary)] text-white text-xs rounded-full w-6 h-5 px-2 flex items-center justify-center">
+            <span className="bg-[var(--color-secondary)] text-xs rounded-full w-6 h-5 px-2 flex items-center justify-center">
               {cart.length}
             </span>
           )}
