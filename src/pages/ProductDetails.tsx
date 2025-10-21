@@ -51,6 +51,8 @@ export default function ProductDetails() {
         {product.image && (
           <img
             src={product.image}
+            alt={product.title}
+            loading="lazy"
             className="w-full max-w-md h-96 product-image rounded-xl"
           />
         )}

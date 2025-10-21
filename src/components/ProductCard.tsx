@@ -1,14 +1,21 @@
 import { Link } from "react-router-dom";
 interface Props {
   product: Product;
-  onAdd: (product: Product) => void;
+  onAdd?: (product: Product) => void;
 }
 
 export default function ProductCard({ product, onAdd }: Props) {
   return (
     <Link to={`/products/${product.id}`} className="product-card-link">
       <div className="product-card">
-        {product.image && <img src={product.image} className="product-image" />}
+        {product.image && (
+          <img
+            src={product.image}
+            alt={product.title}
+            className="product-image"
+            loading="lazy"
+          />
+        )}
         <div className="flex flex-col flex-grow justify-between p-5">
           <div>
             <p className="font-bold text-md tracking-tight mb-2 text-base/6">
@@ -21,7 +28,7 @@ export default function ProductCard({ product, onAdd }: Props) {
             onClick={(e) => {
               e.preventDefault();
               e.stopPropagation();
-              onAdd(product);
+              onAdd!(product);
             }}
           >
             Add to cart
